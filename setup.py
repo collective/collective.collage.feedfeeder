@@ -3,12 +3,20 @@
 import os
 from setuptools import setup, find_packages
 
-version = '0.1'
+version = '1.0'
+
+here = os.path.abspath(os.path.dirname(__file__))
+try:
+    README = open(os.path.join(here, 'README.rst')).read()
+    CHANGES = open(os.path.join(here, 'CHANGES.rst')).read()
+except:  # doesn't work under tox/pip
+    README = ''
+    CHANGES = ''
 
 setup(name='collective.collage.feedfeeder',
       version=version,
-      description="Add-on that allows displaying RSS-feeds inside a Collage.",
-      # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
+      description="Collage add-on that allows displaying RSS-feeds.",
+      long_description="\n\n".join((README, CHANGES)),
       classifiers=[
         "Programming Language :: Python",
         "Framework :: Plone",
