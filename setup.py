@@ -10,6 +10,8 @@ try:
     README = open(os.path.join(here, 'README.rst')).read()
     CHANGES = open(os.path.join(here, 'CHANGES.rst')).read()
 except:  # doesn't work under tox/pip
+    # Note: I wonder is that was because we tried to open CHANGES.rst
+    # when the file was called CHANGES.txt.
     README = ''
     CHANGES = ''
 
